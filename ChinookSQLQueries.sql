@@ -18,3 +18,8 @@ select FirstName, LastName, InvoiceId, InvoiceDate, BillingCountry
 from Invoice
 join Customer
 	on Invoice.CustomerId = Customer.CustomerId
+
+/* sales_agents.sql: Provide a query showing only the Employees who are Sales Agents. */
+select *
+from Employee
+where Title = 'Sales Support Agent'
