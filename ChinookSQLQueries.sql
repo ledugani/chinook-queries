@@ -54,3 +54,9 @@ join employee
 	on customer.SupportRepId = employee.EmployeeId
 join invoice
 	on invoice.CustomerId = customer.CustomerId
+
+/* total_invoices_{year}.sql: 
+	How many Invoices were there in 2009 and 2011? */
+select Invoices_in_2009_and_2011 = count(*)
+from invoice
+where InvoiceDate like '%2009%' or InvoiceDate like '%2011%'
