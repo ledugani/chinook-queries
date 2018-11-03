@@ -60,3 +60,13 @@ join invoice
 select Invoices_in_2009_and_2011 = count(*)
 from invoice
 where InvoiceDate like '%2009%' or InvoiceDate like '%2011%'
+
+/* total_sales_{year}.sql: 
+	What are the respective total sales for each of those years? */
+
+select 
+	sum(Total) as Total,
+	year(InvoiceDate) as Year
+from invoice
+where InvoiceDate like '%2009%' or InvoiceDate like '%2011%'
+group by year(InvoiceDate)
